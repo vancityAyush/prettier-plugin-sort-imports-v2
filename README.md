@@ -8,12 +8,35 @@ Example:
 ## Installation
 
 ```sh
-npm install --save-dev prettier-plugin-sort-imports
+npm install --save-dev prettier-plugin-sort-imports-v3
 ```
 
 ## Usage
 
 The plugin will be loaded by Prettier automatically. No configuration needed. It will sort by import statement length by default.
+
+
+### Add to Prettier Config
+
+1. Create a file named `prettier.config.js` in your project's root directory.
+2. Add the following contents:
+
+```js
+module.exports = {
+	// For prettier 3
+	sortingMethod: 'lineLength',
+	plugins: ['./node_modules/prettier-plugin-sort-imports/dist/index.js'],
+};
+```
+
+```js
+module.exports = {
+	// For prettier 2
+	sortingMethod: 'lineLength',
+	pluginSearchDirs: ['./node_modules'],
+	plugins: ['./node_modules/prettier-plugin-sort-imports/dist/index.2.js'],
+};
+```
 
 ### Options:
 
